@@ -9,9 +9,11 @@ app.use(bodyParser.json());
 
 // CORS configuration
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'https://bloggingapp-rho.vercel.app', // Frontend deployed link or fallback
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-  credentials: true, // Allow credentials if needed
+  origin: [
+      'https://bloggingapp-rho.vercel.app', // backend deployed link1
+      'https://bloggingapp-1.onrender.com'  // Backend deployed link2
+  ],
+  optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
 
