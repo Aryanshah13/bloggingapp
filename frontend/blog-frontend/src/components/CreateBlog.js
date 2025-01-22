@@ -44,7 +44,7 @@ const CreateBlog = () => {
 
     const handleSubmit = async () => {
         try {
-            await axios.post("http://localhost:5000/blog", {
+            await axios.post("https://bloggingapp-fufy.onrender.com/blog", {
                 title,
                 contentSections: sections,
             });

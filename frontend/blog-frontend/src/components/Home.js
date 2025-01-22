@@ -11,7 +11,7 @@ const Home = () => {
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/blogs");
+                const response = await axios.get("https://bloggingapp-fufy.onrender.com/blogs");
                 setBlogs(response.data);
                 setLoading(false);
             } catch (err) {
@@ -23,7 +23,7 @@ const Home = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/blog/${id}`);
+            await axios.delete(`https://bloggingapp-fufy.onrender.com/blog/${id}`);
             setBlogs(blogs.filter(blog => blog._id !== id));
         } catch (err) {
             console.error("Error deleting blog:", err);
